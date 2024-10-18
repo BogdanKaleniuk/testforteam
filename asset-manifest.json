@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bogdankaleniuk.github.io/testforteam/static/css/main.9a86698e.css",
-    "main.js": "/bogdankaleniuk.github.io/testforteam/static/js/main.890577e0.js",
-    "index.html": "/bogdankaleniuk.github.io/testforteam/index.html",
-    "main.9a86698e.css.map": "/bogdankaleniuk.github.io/testforteam/static/css/main.9a86698e.css.map",
-    "main.890577e0.js.map": "/bogdankaleniuk.github.io/testforteam/static/js/main.890577e0.js.map"
+    "main.css": "/testforteam/static/css/main.7f1cc7e3.css",
+    "main.js": "/testforteam/static/js/main.890577e0.js",
+    "index.html": "/testforteam/index.html",
+    "main.7f1cc7e3.css.map": "/testforteam/static/css/main.7f1cc7e3.css.map",
+    "main.890577e0.js.map": "/testforteam/static/js/main.890577e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a86698e.css",
+    "static/css/main.7f1cc7e3.css",
     "static/js/main.890577e0.js"
   ]
 }
