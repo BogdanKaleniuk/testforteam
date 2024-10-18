@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BogdanKaleniuk/testforteam/static/css/main.9a86698e.css",
+    "main.js": "/BogdanKaleniuk/testforteam/static/js/main.890577e0.js",
+    "index.html": "/BogdanKaleniuk/testforteam/index.html",
+    "main.9a86698e.css.map": "/BogdanKaleniuk/testforteam/static/css/main.9a86698e.css.map",
+    "main.890577e0.js.map": "/BogdanKaleniuk/testforteam/static/js/main.890577e0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a86698e.css",
+    "static/js/main.890577e0.js"
+  ]
+}
