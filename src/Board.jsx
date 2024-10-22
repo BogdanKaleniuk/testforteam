@@ -70,7 +70,6 @@ export function calculateWinner(squares) {
 
   for (let col = 0; col < size; col++) {
     for (let row = 0; row < size - 4; row++) {
-      // Вертикалі
       lines.push([
         row * size + col,
         (row + 1) * size + col,
@@ -83,7 +82,6 @@ export function calculateWinner(squares) {
 
   for (let row = 0; row < size - 4; row++) {
     for (let col = 0; col < size - 4; col++) {
-      // Діагоналі зліва направо
       lines.push([
         row * size + col,
         (row + 1) * size + col + 1,
@@ -91,7 +89,6 @@ export function calculateWinner(squares) {
         (row + 3) * size + col + 3,
         (row + 4) * size + col + 4,
       ]);
-      // Діагоналі справа наліво
       lines.push([
         row * size + col + 4,
         (row + 1) * size + col + 3,
