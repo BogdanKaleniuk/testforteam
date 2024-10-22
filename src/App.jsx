@@ -1,55 +1,34 @@
-import { useState } from "react";
-import Board from "./Board";
-import { calculateWinner } from "./Board";
+import React from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
-export default function Game() {
-  const [history, setHistory] = useState([Array(100).fill(null)]);
-  const [currentMove, setCurrentMove] = useState(0);
-  const xIsNext = currentMove % 2 === 0;
-  const currentSquares = history[currentMove];
+import Game from "./Board/Game";
+import Search from "./Search/Search";
+import Home from "./Home";
 
-  function handlePlay(nextSquares) {
-    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
-    setHistory(nextHistory);
-    setCurrentMove(nextHistory.length - 1);
-  }
-
-  function jumpTo(nextMove) {
-    setCurrentMove(nextMove);
-  }
-
-  const winner = calculateWinner(currentSquares);
-  const gameOver = winner || currentSquares.every((sqr) => sqr);
-
-  const moves = history.map((squares, move) => {
-    let description;
-    if (move > 0) {
-      description = "Go to move #" + move;
-    } else {
-      description = "Go to game start";
-    }
-    return (
-      <li key={move}>
-        <button
-          onClick={() => jumpTo(move)}
-          style={{
-            backgroundColor: gameOver && move === 0 ? "green" : "initial",
-          }}
-        >
-          {description}
-        </button>
-      </li>
-    );
-  });
+export default function App() {
+  const navigate = useNavigate();
 
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className="game-info">
-        <ol>{moves}</ol>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/testforteam" element={<Home />} />
+      <Route
+        path="/testforteam/game"
+        element={
+          <div>
+            <button onClick={() => navigate("/testforteam")}>Back</button>
+            <Game />
+          </div>
+        }
+      />
+      <Route
+        path="/testforteam/search"
+        element={
+          <div>
+            <button onClick={() => navigate("/testforteam")}>Back</button>
+            <Search />
+          </div>
+        }
+      />
+    </Routes>
   );
 }
