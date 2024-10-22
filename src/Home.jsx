@@ -5,10 +5,10 @@ function Home() {
   return (
     <div>
       <h1>Welcome to the Home Page</h1>
-      <Link to="/testforteam/game">
+      <Link to="/game">
         <button>Go to Game</button>
       </Link>
-      <Link to="/testforteam/search">
+      <Link to="/search">
         <button>Go to Search</button>
       </Link>
     </div>

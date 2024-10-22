@@ -10,21 +10,21 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/testforteam" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route
-        path="/testforteam/game"
+        path="/game"
         element={
           <div>
-            <button onClick={() => navigate("/testforteam")}>Back</button>
+            <button onClick={() => navigate("/")}>Back</button>
             <Game />
           </div>
         }
       />
       <Route
-        path="/testforteam/search"
+        path="/search"
         element={
           <div>
-            <button onClick={() => navigate("/testforteam")}>Back</button>
+            <button onClick={() => navigate("/")}>Back</button>
             <Search />
           </div>
         }
