@@ -24,66 +24,95 @@ export default function Board({ xIsNext, squares, onPlay }) {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
-  function calculateWinner(squares) {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
-      if (
-        squares[a] &&
-        squares[a] === squares[b] &&
-        squares[a] === squares[c]
-      ) {
-        return squares[a];
-      }
+  const boardRows = [];
+  for (let row = 0; row < 10; row++) {
+    const squaresRow = [];
+    for (let col = 0; col < 10; col++) {
+      const index = row * 10 + col;
+      squaresRow.push(
+        <Square
+          key={index}
+          value={squares[index]}
+          onSquareClick={() => handleClick(index)}
+        />
+      );
     }
-    return null;
+    boardRows.push(
+      <div key={row} className="board-row">
+        {squaresRow}
+      </div>
+    );
   }
 
   return (
     <>
       <div className="status">{status}</div>
-      <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
+      {boardRows}
     </>
   );
 }
 
 export function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
+  const size = 10; // Розмір поля 10x10
+  const lines = [];
+
+  // Перевіряємо всі горизонталі, вертикалі і діагоналі
+  for (let row = 0; row < size; row++) {
+    for (let col = 0; col < size - 4; col++) {
+      // Горизонталі
+      lines.push([
+        row * size + col,
+        row * size + col + 1,
+        row * size + col + 2,
+        row * size + col + 3,
+        row * size + col + 4,
+      ]);
+    }
+  }
+
+  for (let col = 0; col < size; col++) {
+    for (let row = 0; row < size - 4; row++) {
+      // Вертикалі
+      lines.push([
+        row * size + col,
+        (row + 1) * size + col,
+        (row + 2) * size + col,
+        (row + 3) * size + col,
+        (row + 4) * size + col,
+      ]);
+    }
+  }
+
+  for (let row = 0; row < size - 4; row++) {
+    for (let col = 0; col < size - 4; col++) {
+      // Діагоналі зліва направо
+      lines.push([
+        row * size + col,
+        (row + 1) * size + col + 1,
+        (row + 2) * size + col + 2,
+        (row + 3) * size + col + 3,
+        (row + 4) * size + col + 4,
+      ]);
+      // Діагоналі справа наліво
+      lines.push([
+        row * size + col + 4,
+        (row + 1) * size + col + 3,
+        (row + 2) * size + col + 2,
+        (row + 3) * size + col + 1,
+        (row + 4) * size + col,
+      ]);
+    }
+  }
+
   for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+    const [a, b, c, d, e] = lines[i];
+    if (
+      squares[a] &&
+      squares[a] === squares[b] &&
+      squares[a] === squares[c] &&
+      squares[a] === squares[d] &&
+      squares[a] === squares[e]
+    ) {
       return squares[a];
     }
   }
