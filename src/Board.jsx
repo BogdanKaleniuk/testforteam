@@ -53,13 +53,11 @@ export default function Board({ xIsNext, squares, onPlay }) {
 }
 
 export function calculateWinner(squares) {
-  const size = 10; // Розмір поля 10x10
+  const size = 10;
   const lines = [];
 
-  // Перевіряємо всі горизонталі, вертикалі і діагоналі
   for (let row = 0; row < size; row++) {
     for (let col = 0; col < size - 4; col++) {
-      // Горизонталі
       lines.push([
         row * size + col,
         row * size + col + 1,
