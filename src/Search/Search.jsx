@@ -13,15 +13,13 @@ export function ProductCategoryRow({ category }) {
 }
 
 export function ProductRow({ product }) {
-  const name = product.stocked ? (
-    product.name
-  ) : (
-    <span style={{ color: "red" }}>{product.name}</span>
-  );
+  const nameStyle = {
+    color: product.stocked ? "green" : "red",
+  };
 
   return (
     <tr>
-      <td>{name}</td>
+      <td style={nameStyle}>{product.name}</td>
       <td>{product.price}</td>
     </tr>
   );
