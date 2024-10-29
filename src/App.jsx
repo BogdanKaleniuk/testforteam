@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Game from "./Board/Game";
 import Search from "./Search/Search";
 import Home from "./Home";
+import Check from "./Check/Check";
 
 export default function App() {
   const navigate = useNavigate();
@@ -26,6 +27,15 @@ export default function App() {
           <div>
             <button onClick={() => navigate("/")}>Back</button>
             <Search />
+          </div>
+        }
+      />
+      <Route
+        path="/check"
+        element={
+          <div>
+            <button onClick={() => navigate("/")}>Back</button>
+            <Check />
           </div>
         }
       />
