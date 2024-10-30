@@ -13,7 +13,7 @@ export default function Check() {
   const handleAddItem = () => {
     if (newItem.trim() !== "") {
       setItems([...items, { name: newItem, isPacked: false }]);
-      setNewItem(""); // очищаємо поле вводу після додавання
+      setNewItem("");
     }
   };
 
