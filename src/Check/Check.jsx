@@ -4,7 +4,7 @@ import Item from "./Item";
 export default function Check() {
   const [items, setItems] = useState([
     { name: "Космічний костюм", isPacked: true },
-    { name: "Шолом із золотим листям", isPacked: true },
+    { name: "Шолом із золотим листям", isPacked: false },
     { name: "Фото Тем О'Шонессі (Tam O'Shaughnessy)", isPacked: false },
   ]);
 
