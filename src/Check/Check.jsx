@@ -30,7 +30,7 @@ export default function Check() {
       <h1>Список речей для пакування Саллі Райд (Sally Ride)</h1>
       <input
         type="text"
-        placeholder="Додати новий елемент"
+        placeholder="Додати елемент"
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
       />
