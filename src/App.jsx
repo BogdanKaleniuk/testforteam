@@ -5,6 +5,7 @@ import Game from "./Board/Game";
 import Search from "./Search/Search";
 import Home from "./Home";
 import Check from "./Check/Check";
+import Render from "./Render/Render";
 
 export default function App() {
   const navigate = useNavigate();
@@ -36,6 +37,15 @@ export default function App() {
           <div>
             <button onClick={() => navigate("/")}>Back</button>
             <Check />
+          </div>
+        }
+      />
+      <Route
+        path="/render"
+        element={
+          <div>
+            <button onClick={() => navigate("/")}>Back</button>
+            <Render />
           </div>
         }
       />

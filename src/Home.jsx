@@ -14,6 +14,9 @@ function Home() {
       <Link to="/check">
         <button>Go to Check</button>
       </Link>
+      <Link to="/render">
+        <button>Go to Check</button>
+      </Link>
     </div>
   );
 }
