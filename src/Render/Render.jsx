@@ -7,7 +7,7 @@ export default function Render() {
     <>
       <FancyText title text="Застосунок 'Натхнення'" />
       <InspirationGenerator>
-        <Copyright year={2004} />
+        <Copyright year={2024} />
       </InspirationGenerator>
     </>
   );

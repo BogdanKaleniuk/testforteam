@@ -2,9 +2,10 @@ import * as React from "react";
 import inspirations from "./inspirations";
 import FancyText from "./FancyText";
 import Color from "./Color";
+import { useState } from "react";
 
 export default function InspirationGenerator({ children }) {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = useState(0);
   const inspiration = inspirations[index];
   const next = () => setIndex((index + 1) % inspirations.length);
 
