@@ -5,9 +5,12 @@ export default function AddTask({ onAddTask }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (text.trim() === "") return; // Не додаємо порожні завдання
+    // if (text.trim() === "") {
+    //   alert("Task cannot be empty!");
+    //   return;
+    // }
     onAddTask(text);
-    setText(""); // Очищаємо поле вводу після додавання
+    setText("");
   }
 
   return (

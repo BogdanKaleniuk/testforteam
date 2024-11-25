@@ -28,14 +28,6 @@ function Task({ task, onChange, onDelete }) {
     });
   }
 
-  function handleEdit() {
-    setIsEditing(true); // Вмикаємо режим редагування
-  }
-
-  function handleSave() {
-    setIsEditing(false); // Виходимо з режиму редагування
-  }
-
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
       <input type="checkbox" checked={task.done} onChange={handleToggleDone} />
@@ -49,7 +41,6 @@ function Task({ task, onChange, onDelete }) {
               textDecoration: task.done ? "line-through" : "none",
             }}
           />
-          <button onClick={handleSave}>Save</button>
         </>
       ) : (
         <>
@@ -60,10 +51,15 @@ function Task({ task, onChange, onDelete }) {
           >
             {task.text}
           </span>
-          <button onClick={handleEdit}>Edit</button>
         </>
       )}
-
+      <button
+        onClick={
+          isEditing ? () => setIsEditing(false) : () => setIsEditing(true)
+        }
+      >
+        {isEditing ? "Save" : "Edit"}
+      </button>
       <button onClick={() => onDelete(task.id)}>Delete</button>
     </div>
   );

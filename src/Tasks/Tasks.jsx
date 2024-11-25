@@ -1,9 +1,15 @@
 import { useReducer } from "react";
 import AddTask from "./AddTask.jsx";
 import TaskList from "./TaskList.jsx";
+import { useState } from "react";
 
 export default function TaskApp() {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+  const [text, setText] = useState("");
+  let nextId =
+    initialTasks.length > 0
+      ? Math.max(...initialTasks.map((task) => task.id)) + 1
+      : 0;
 
   function handleAddTask(text) {
     dispatch({
@@ -70,7 +76,6 @@ function tasksReducer(tasks, action) {
   }
 }
 
-let nextId = 3;
 const initialTasks = [
   { id: 0, text: "Visit Kafka Museum", done: true },
   { id: 1, text: "Watch a puppet show", done: false },
