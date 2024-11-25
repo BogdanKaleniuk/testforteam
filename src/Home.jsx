@@ -17,6 +17,9 @@ function Home() {
       <Link to="/render">
         <button>Go to Check</button>
       </Link>
+      <Link to="/tasks">
+        <button>Go to Tasks</button>
+      </Link>
     </div>
   );
 }
