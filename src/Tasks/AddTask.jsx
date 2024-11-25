@@ -5,10 +5,10 @@ export default function AddTask({ onAddTask }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // if (text.trim() === "") {
-    //   alert("Task cannot be empty!");
-    //   return;
-    // }
+    if (text.trim() === "") {
+      alert("Task cannot be empty!");
+      return;
+    }
     onAddTask(text);
     setText("");
   }

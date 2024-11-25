@@ -1,11 +1,9 @@
 import { useReducer } from "react";
 import AddTask from "./AddTask.jsx";
 import TaskList from "./TaskList.jsx";
-import { useState } from "react";
 
 export default function TaskApp() {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
-  const [text, setText] = useState("");
   let nextId =
     initialTasks.length > 0
       ? Math.max(...initialTasks.map((task) => task.id)) + 1
