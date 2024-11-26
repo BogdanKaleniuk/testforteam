@@ -1,13 +1,10 @@
 import { useReducer } from "react";
 import AddTask from "./AddTask.jsx";
 import TaskList from "./TaskList.jsx";
+import tasksReducer from "./taskResucer.jsx";
 
 export default function TaskApp() {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
-  let nextId =
-    initialTasks.length > 0
-      ? Math.max(...initialTasks.map((task) => task.id)) + 1
-      : 0;
 
   function handleAddTask(text) {
     dispatch({
@@ -33,7 +30,7 @@ export default function TaskApp() {
 
   return (
     <>
-      <h1>Prague itinerary</h1>
+      <h1>Day off in Kyoto</h1>
       <AddTask onAddTask={handleAddTask} />
       <TaskList
         tasks={tasks}
@@ -44,38 +41,9 @@ export default function TaskApp() {
   );
 }
 
-function tasksReducer(tasks, action) {
-  switch (action.type) {
-    case "added": {
-      return [
-        ...tasks,
-        {
-          id: action.id,
-          text: action.text,
-          done: false,
-        },
-      ];
-    }
-    case "changed": {
-      return tasks.map((t) => {
-        if (t.id === action.task.id) {
-          return action.task;
-        } else {
-          return t;
-        }
-      });
-    }
-    case "deleted": {
-      return tasks.filter((t) => t.id !== action.id);
-    }
-    default: {
-      throw Error("Unknown action: " + action.type);
-    }
-  }
-}
-
+let nextId = 3;
 const initialTasks = [
-  { id: 0, text: "Visit Kafka Museum", done: true },
-  { id: 1, text: "Watch a puppet show", done: false },
-  { id: 2, text: "Lennon Wall pic", done: false },
+  { id: 0, text: "Philosopher’s Path", done: true },
+  { id: 1, text: "Visit the temple", done: false },
+  { id: 2, text: "Drink matcha", done: false },
 ];
