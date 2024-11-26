@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { initialTasks } from "./TasksContext.jsx";
+import { useTasksDispatch } from "./TasksContext.jsx";
 
-export default function AddTask({ onAddTask }) {
+export default function AddTask() {
   const [text, setText] = useState("");
+  const dispatch = useTasksDispatch();
   return (
     <>
       <input
@@ -12,7 +15,15 @@ export default function AddTask({ onAddTask }) {
       <button
         onClick={() => {
           setText("");
-          onAddTask(text);
+          if (text) {
+            dispatch({
+              type: "added",
+              id: nextId++,
+              text: text,
+            });
+          } else {
+            alert("Empty");
+          }
         }}
       >
         Add
@@ -20,3 +31,8 @@ export default function AddTask({ onAddTask }) {
     </>
   );
 }
+
+let nextId =
+  initialTasks.length > 0
+    ? Math.max(...initialTasks.map((task) => task.id)) + 1
+    : 0;
