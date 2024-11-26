@@ -1,7 +1,7 @@
 import { createContext, useReducer, useContext } from "react";
 
-export const TasksContext = createContext(null);
-export const TasksDispatchContext = createContext(null);
+export const TasksContext = createContext(null); /// TasksContext надає доступ до стану (списку завдань).
+export const TasksDispatchContext = createContext(null); /// TasksDispatchContext надає доступ до функції dispatch для оновлення стану.
 
 export default function TaskProvider({ children }) {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
@@ -23,6 +23,7 @@ export function useTasksDispatch() {
   return useContext(TasksDispatchContext);
 }
 
+/// це функція, яка оновлює стан на основі дії (action).
 function tasksReducer(tasks, action) {
   switch (action.type) {
     case "added": {

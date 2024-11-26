@@ -3,8 +3,8 @@ import { initialTasks } from "./TasksContext.jsx";
 import { useTasksDispatch } from "./TasksContext.jsx";
 
 export default function AddTask() {
-  const [text, setText] = useState("");
-  const dispatch = useTasksDispatch();
+  const [text, setText] = useState(""); ///для зберігання тексту нового завдання.
+  const dispatch = useTasksDispatch(); /// Отримує функцію dispatch через контекст (useTasksDispatch).
   return (
     <>
       <input

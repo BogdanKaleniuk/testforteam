@@ -3,7 +3,7 @@ import { useTasks } from "./TasksContext.jsx";
 import { useTasksDispatch } from "./TasksContext.jsx";
 
 export default function TaskList() {
-  const tasks = useTasks();
+  const tasks = useTasks(); /// Отримує список завдань з TasksContext
 
   return (
     <ul>
@@ -56,7 +56,6 @@ function Task({ task }) {
         onChange={(e) => {
           dispatch({
             type: "changed",
-
             ...task,
             done: e.target.checked,
           });
