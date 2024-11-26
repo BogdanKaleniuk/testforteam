@@ -20,6 +20,9 @@ function Home() {
       <Link to="/tasks">
         <button>Go to Tasks</button>
       </Link>
+      <Link to="/todo">
+        <button>Go to Todo</button>
+      </Link>
     </div>
   );
 }

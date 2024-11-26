@@ -7,6 +7,7 @@ import Home from "./Home";
 import Check from "./Check/Check";
 import Render from "./Render/Render";
 import TaskApp from "./Tasks/Tasks";
+import TasksUpp from "./TasksUpp/TasksApp";
 
 export default function App() {
   const navigate = useNavigate();
@@ -56,6 +57,15 @@ export default function App() {
           <div>
             <button onClick={() => navigate("/")}>Back</button>
             <TaskApp />
+          </div>
+        }
+      />
+      <Route
+        path="/todo"
+        element={
+          <div>
+            <button onClick={() => navigate("/")}>Back</button>
+            <TasksUpp />
           </div>
         }
       />
