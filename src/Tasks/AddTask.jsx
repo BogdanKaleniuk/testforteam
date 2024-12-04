@@ -8,6 +8,7 @@ export default function AddTask() {
   return (
     <>
       <input
+        className="rounded border border-solid hover:border-green-500"
         placeholder="Add task"
         value={text}
         onChange={(e) => setText(e.target.value)}

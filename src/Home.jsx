@@ -1,40 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { stylesButton } from "./App";
 
 function Home() {
   return (
-    <div>
-      <h1 className="text-4xl text-green-400">Welcome to the Home Page</h1>
+    <div className="text-center">
+      <h1 className="text-4xl text-green-400 font-extrabold mb-2 bg-green-50 hover:blur-sm transition-color duration-300 ease-in-out shadow shadow-green-200">
+        Welcome to the Home Page
+      </h1>
 
-      <Link to="/game">
-        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
-          Go to Game
-        </button>
+      <Link className="mr-1" to="/game">
+        <button className={stylesButton}>Go to Game</button>
       </Link>
-      <Link to="/search">
-        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
-          Go to Search
-        </button>
+      <Link className="mr-1" to="/search">
+        <button className={stylesButton}>Go to Search</button>
       </Link>
-      <Link to="/check">
-        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
-          Go to Check
-        </button>
+      <Link className="mr-1" to="/check">
+        <button className={stylesButton}>Go to Check</button>
       </Link>
-      <Link to="/render">
-        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
-          Go to Check
-        </button>
+      <Link className="mr-1" to="/render">
+        <button className={stylesButton}>Go to Check</button>
       </Link>
-      <Link to="/tasks">
-        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
-          Go to Tasks
-        </button>
+      <Link className="mr-1" to="/tasks">
+        <button className={stylesButton}>Go to Tasks</button>
       </Link>
       <Link to="/todo">
-        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
-          Go to Todo
-        </button>
+        <button className={stylesButton}>Go to Todo</button>
       </Link>
     </div>
   );

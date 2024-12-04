@@ -8,10 +8,11 @@ import Render from "./Render/Render";
 import TaskApp from "./Tasks/Tasks";
 import TasksUpp from "./TasksUpp/TasksApp";
 
+export const stylesButton =
+  "cursor-pointer p-1 list-none mb-1.5 rounded-lg border-2 border-green-500 inline-block hover:text-green-500 transition-color duration-300 ease-in-out";
+
 export default function App() {
   const navigate = useNavigate();
-  const stylesButton =
-    "cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500";
 
   return (
     <Routes>
@@ -20,7 +21,7 @@ export default function App() {
         path="/game"
         element={
           <div>
-            <button class={stylesButton} onClick={() => navigate("/")}>
+            <button className={stylesButton} onClick={() => navigate("/")}>
               Back
             </button>
             <Game />
@@ -31,7 +32,7 @@ export default function App() {
         path="/search"
         element={
           <div>
-            <button class={stylesButton} onClick={() => navigate("/")}>
+            <button className={stylesButton} onClick={() => navigate("/")}>
               Back
             </button>
             <Search />
@@ -42,7 +43,7 @@ export default function App() {
         path="/check"
         element={
           <div>
-            <button class={stylesButton} onClick={() => navigate("/")}>
+            <button className={stylesButton} onClick={() => navigate("/")}>
               Back
             </button>
             <Check />
@@ -53,7 +54,7 @@ export default function App() {
         path="/render"
         element={
           <div>
-            <button class={stylesButton} onClick={() => navigate("/")}>
+            <button className={stylesButton} onClick={() => navigate("/")}>
               Back
             </button>
             <Render />
@@ -64,7 +65,7 @@ export default function App() {
         path="/tasks"
         element={
           <div>
-            <button class={stylesButton} onClick={() => navigate("/")}>
+            <button className={stylesButton} onClick={() => navigate("/")}>
               Back
             </button>
             <TaskApp />
