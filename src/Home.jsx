@@ -4,24 +4,37 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
+      <h1 className="text-4xl text-green-400">Welcome to the Home Page</h1>
+
       <Link to="/game">
-        <button>Go to Game</button>
+        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
+          Go to Game
+        </button>
       </Link>
       <Link to="/search">
-        <button>Go to Search</button>
+        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
+          Go to Search
+        </button>
       </Link>
       <Link to="/check">
-        <button>Go to Check</button>
+        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
+          Go to Check
+        </button>
       </Link>
       <Link to="/render">
-        <button>Go to Check</button>
+        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
+          Go to Check
+        </button>
       </Link>
       <Link to="/tasks">
-        <button>Go to Tasks</button>
+        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
+          Go to Tasks
+        </button>
       </Link>
       <Link to="/todo">
-        <button>Go to Todo</button>
+        <button class="cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500">
+          Go to Todo
+        </button>
       </Link>
     </div>
   );

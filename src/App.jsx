@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-
 import Game from "./Board/Game";
 import Search from "./Search/Search";
 import Home from "./Home";
@@ -11,6 +10,8 @@ import TasksUpp from "./TasksUpp/TasksApp";
 
 export default function App() {
   const navigate = useNavigate();
+  const stylesButton =
+    "cursor-pointer list-none mb-1.5 rounded-lg border-2 border-gray-500";
 
   return (
     <Routes>
@@ -19,7 +20,9 @@ export default function App() {
         path="/game"
         element={
           <div>
-            <button onClick={() => navigate("/")}>Back</button>
+            <button class={stylesButton} onClick={() => navigate("/")}>
+              Back
+            </button>
             <Game />
           </div>
         }
@@ -28,7 +31,9 @@ export default function App() {
         path="/search"
         element={
           <div>
-            <button onClick={() => navigate("/")}>Back</button>
+            <button class={stylesButton} onClick={() => navigate("/")}>
+              Back
+            </button>
             <Search />
           </div>
         }
@@ -37,7 +42,9 @@ export default function App() {
         path="/check"
         element={
           <div>
-            <button onClick={() => navigate("/")}>Back</button>
+            <button class={stylesButton} onClick={() => navigate("/")}>
+              Back
+            </button>
             <Check />
           </div>
         }
@@ -46,7 +53,9 @@ export default function App() {
         path="/render"
         element={
           <div>
-            <button onClick={() => navigate("/")}>Back</button>
+            <button class={stylesButton} onClick={() => navigate("/")}>
+              Back
+            </button>
             <Render />
           </div>
         }
@@ -55,7 +64,9 @@ export default function App() {
         path="/tasks"
         element={
           <div>
-            <button onClick={() => navigate("/")}>Back</button>
+            <button class={stylesButton} onClick={() => navigate("/")}>
+              Back
+            </button>
             <TaskApp />
           </div>
         }
@@ -64,7 +75,9 @@ export default function App() {
         path="/todo"
         element={
           <div>
-            <button onClick={() => navigate("/")}>Back</button>
+            <button class={stylesButton} onClick={() => navigate("/")}>
+              Back
+            </button>
             <TasksUpp />
           </div>
         }

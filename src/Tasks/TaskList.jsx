@@ -56,8 +56,11 @@ function Task({ task }) {
         onChange={(e) => {
           dispatch({
             type: "changed",
-            ...task,
-            done: e.target.checked,
+            task: {
+              // Передаємо оновлений об'єкт `task` у поле `task`
+              ...task,
+              done: e.target.checked, // Змінюємо лише значення `done`
+            },
           });
         }}
       />
