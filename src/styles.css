@@ -108,19 +108,6 @@ body {
   margin-left: 20px;
 }
 
-/* .game-info li button {
-  cursor: pointer;
-  list-style-type: none;
-
-  margin-bottom: 5px;
-  border-radius: 10px;
-  border: 2px solid gray;
-}
-
-.game-info li button:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-} */
 
 .fancy {
   font-family: "Georgia";

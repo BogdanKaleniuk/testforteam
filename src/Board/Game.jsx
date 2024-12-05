@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Board from "./Board";
 import { calculateWinner } from "./Board";
+import "../styles.css";
 
 export default function Game() {
   const [history, setHistory] = useState([Array(100).fill(null)]);
@@ -43,12 +44,12 @@ export default function Game() {
   });
 
   return (
-    <div className="game">
-      <div className="game-board">
+    <div className="flex flex-row justify-center">
+      <div>
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
-      <div className="game-info">
-        <ol>{moves}</ol>
+      <div className="ml-5">
+        <ol className="text-green-600 ">{moves}</ol>
       </div>
     </div>
   );
