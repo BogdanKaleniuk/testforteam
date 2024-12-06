@@ -39,7 +39,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
       );
     }
     boardRows.push(
-      <div key={row} className="board-row">
+      <div key={row} className="bg-lime-600">
         {squaresRow}
       </div>
     );
@@ -47,8 +47,8 @@ export default function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <>
-      <div className="status">{status}</div>
-      {boardRows}
+      <div className="mb-2">{status}</div>
+      <div className="text-green-600 ">{boardRows}</div>
     </>
   );
 }

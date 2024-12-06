@@ -5,7 +5,7 @@ import { stylesButton } from "./App";
 function Home() {
   return (
     <div className="text-center">
-      <h1 className="text-4xl text-green-400 font-extrabold mb-2 bg-green-50 hover:blur-sm transition-color duration-300 ease-in-out shadow shadow-green-200">
+      <h1 className="text-4xl text-green-400 font-extrabold mb-2 bg-green-50 hover:blur-sm transition-color duration-300 ease-in-out">
         Welcome to the Home Page
       </h1>
 

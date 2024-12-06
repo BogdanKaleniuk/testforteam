@@ -49,7 +49,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="ml-5">
-        <ol className="text-green-600 ">{moves}</ol>
+        <ol className="text-green-600">{moves}</ol>
       </div>
     </div>
   );
