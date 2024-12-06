@@ -23,6 +23,7 @@ export default function Task({ task }) {
   return (
     <li className="flex items-center">
       <input
+        className="mr-1"
         type="checkbox"
         checked={task.done}
         onChange={() =>
@@ -32,6 +33,10 @@ export default function Task({ task }) {
       {isEditing ? (
         <>
           <input
+            className="rounded border border-gray-300 px-1 py-0.5"
+            style={{
+              width: `${editText.length + 1}ch`, // Динамічна ширина через стилі
+            }}
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
           />
