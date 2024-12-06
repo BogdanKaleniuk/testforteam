@@ -23,7 +23,7 @@ export default function AddTask({ onAddTask }) {
         onChange={(e) => setText(e.target.value)}
       />
       <button
-        className="border border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.5 ml-1"
+        className="border-4 border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.2 ml-1"
         onClick={handleSubmit}
         type="submit"
       >

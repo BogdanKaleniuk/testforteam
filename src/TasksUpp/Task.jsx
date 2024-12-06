@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useTasksDispatch } from "./TasksContext";
 const buttonClass =
-  "border border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.5 ml-1";
+  "border-2 border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.2 ml-1";
 export default function Task({ task }) {
   const dispatch = useTasksDispatch();
   const [isEditing, setIsEditing] = useState(false);
@@ -21,7 +21,7 @@ export default function Task({ task }) {
   }
 
   return (
-    <li className="flex items-center">
+    <li className="flex items-center mb-1">
       <input
         className="mr-1"
         type="checkbox"
@@ -41,13 +41,13 @@ export default function Task({ task }) {
             onChange={(e) => setEditText(e.target.value)}
           />
           <button
-            className="border border-lime-700 rounded-lg hover:border-lime-500	 px-1 py-0.5 ml-1"
+            className="border-2 border-lime-700 rounded-lg hover:border-lime-500	 px-1 py-0.2 ml-1"
             onClick={handleSave}
           >
             Save
           </button>
           <button
-            className="border border-lime-700 	 rounded-lg hover:border-orange-500	 px-1 py-0.5 ml-1"
+            className="border-2 border-lime-700 	 rounded-lg hover:border-orange-500	 px-1 py-0.2 ml-1"
             onClick={() => setIsEditing(false)}
           >
             Cancel
@@ -69,7 +69,7 @@ export default function Task({ task }) {
       )}
 
       <button
-        className="border border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.5 ml-1"
+        className="border-2 border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.2 ml-1"
         onClick={() => dispatch({ type: "deleted", id: task.id })}
       >
         Delete
