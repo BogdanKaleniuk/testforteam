@@ -1,7 +1,8 @@
 // Task.jsx
 import { useState } from "react";
 import { useTasksDispatch } from "./TasksContext";
-
+const buttonClass =
+  "border border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.5 ml-1";
 export default function Task({ task }) {
   const dispatch = useTasksDispatch();
   const [isEditing, setIsEditing] = useState(false);
@@ -20,7 +21,7 @@ export default function Task({ task }) {
   }
 
   return (
-    <li>
+    <li className="flex items-center">
       <input
         type="checkbox"
         checked={task.done}
@@ -34,8 +35,18 @@ export default function Task({ task }) {
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
           />
-          <button onClick={handleSave}>Save</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
+          <button
+            className="border border-lime-700 rounded-lg hover:border-lime-500	 px-1 py-0.5 ml-1"
+            onClick={handleSave}
+          >
+            Save
+          </button>
+          <button
+            className="border border-lime-700 	 rounded-lg hover:border-orange-500	 px-1 py-0.5 ml-1"
+            onClick={() => setIsEditing(false)}
+          >
+            Cancel
+          </button>
         </>
       ) : (
         <>
@@ -46,11 +57,16 @@ export default function Task({ task }) {
           >
             {task.text}
           </span>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
+          <button className={buttonClass} onClick={() => setIsEditing(true)}>
+            Edit
+          </button>
         </>
       )}
 
-      <button onClick={() => dispatch({ type: "deleted", id: task.id })}>
+      <button
+        className="border border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.5 ml-1"
+        onClick={() => dispatch({ type: "deleted", id: task.id })}
+      >
         Delete
       </button>
     </li>

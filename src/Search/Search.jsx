@@ -1,5 +1,6 @@
 import PRODUCTS from "./products";
 import FilterableProductTable from "./Filterable";
+import "../styles.css";
 
 export default function Search() {
   return <FilterableProductTable products={PRODUCTS} />;

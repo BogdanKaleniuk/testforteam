@@ -16,12 +16,17 @@ export default function AddTask({ onAddTask }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        className="border border-lime-700 rounded-lg px-1 py-0.5 hover:border-sky-500	focus:outline-none focus:ring focus:ring-sky-300 mb-1.5 "
         type="text"
         placeholder="Add a new task"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <button onClick={handleSubmit} type="submit">
+      <button
+        className="border border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.5 ml-1"
+        onClick={handleSubmit}
+        type="submit"
+      >
         Add
       </button>
     </form>

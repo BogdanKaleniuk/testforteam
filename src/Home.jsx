@@ -19,7 +19,7 @@ function Home() {
         <button className={stylesButton}>Go to Check</button>
       </Link>
       <Link className="mr-1" to="/render">
-        <button className={stylesButton}>Go to Check</button>
+        <button className={stylesButton}>Go to Render</button>
       </Link>
       <Link className="mr-1" to="/tasks">
         <button className={stylesButton}>Go to Tasks</button>
