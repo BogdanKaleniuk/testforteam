@@ -40,7 +40,7 @@ export default function Task({ task }) {
             onChange={(e) => setEditText(e.target.value)}
           />
           <button
-            className="border-2 border-lime-600 rounded-lg hover:border-lime-500	 px-1 py-0.2 ml-1"
+            className="border-2 border-lime-500 rounded-lg hover:border-lime-500	 px-1 py-0.2 ml-1"
             onClick={handleSave}
           >
             Save
