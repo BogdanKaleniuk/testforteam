@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useTasksDispatch } from "./TasksContext";
 const buttonClass =
-  "border-2 border-lime-500 rounded-lg hover:border-sky-500	 px-1 py-0.2 ml-1";
+  "border-2 border-lime-400 rounded-lg hover:border-sky-500	 px-1 py-0.2 ml-1";
 export default function Task({ task }) {
   const dispatch = useTasksDispatch();
   const [isEditing, setIsEditing] = useState(false);
