@@ -24,7 +24,7 @@ function Home() {
       <Link className="mr-1" to="/tasks">
         <button className={stylesButton}>Go to Tasks</button>
       </Link>
-      <Link to="/todo">
+      <Link className="mr-1" to="/todo">
         <button className={stylesButton}>Go to Todo</button>
       </Link>
     </div>
