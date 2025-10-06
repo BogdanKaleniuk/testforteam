@@ -27,6 +27,9 @@ function Home() {
       <Link className="mr-1" to="/todo">
         <button className={stylesButton}>Go to Todo</button>
       </Link>
+      <Link className="mr-1" to="/searchImage">
+        <button className={stylesButton}>Go to searchImage</button>
+      </Link>
     </div>
   );
 }
