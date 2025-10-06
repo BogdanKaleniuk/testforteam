@@ -76,7 +76,7 @@ export default function App() {
         path="/todo"
         element={
           <div>
-            <button class={stylesButton} onClick={() => navigate("/")}>
+            <button className={stylesButton} onClick={() => navigate("/")}>
               Back
             </button>
             <TasksUpp />
