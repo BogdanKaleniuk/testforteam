@@ -8,6 +8,7 @@ import Render from "./Render/Render";
 import TaskApp from "./Tasks/Tasks";
 import TasksUpp from "./TasksUpp/TasksApp";
 import Task4 from "./Task4/Task4";
+import Task3 from "./Task3/Task3";
 
 export const stylesButton =
   "cursor-pointer p-1 list-none mb-1.5 rounded-lg border-2 border-green-500 inline-block hover:text-green-500 transition-color duration-300 ease-in-out";
@@ -92,6 +93,17 @@ export default function App() {
               Back
             </button>
             <Task4 />
+          </div>
+        }
+      />
+      <Route
+        path="/phoneBook"
+        element={
+          <div>
+            <button className={stylesButton} onClick={() => navigate("/")}>
+              Back
+            </button>
+            <Task3 />
           </div>
         }
       />

@@ -28,7 +28,10 @@ function Home() {
         <button className={stylesButton}>Go to Todo</button>
       </Link>
       <Link className="mr-1" to="/searchImage">
-        <button className={stylesButton}>Go to searchImage</button>
+        <button className={stylesButton}>Go to SearchImage</button>
+      </Link>
+      <Link className="mr-1" to="/phoneBook">
+        <button className={stylesButton}>Go to Phone Book</button>
       </Link>
     </div>
   );
